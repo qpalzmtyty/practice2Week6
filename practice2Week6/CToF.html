@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Celsius To fahrenheit</title>
+</head>
+<body>
+<h2>Enter your number you want to convert</h2>
+<form>
+    <label for="num1">Your number:</label>
+    <input type="number" id="num1" name="num1">
+    <br><br>
+    <button type="button" onclick="toCelsius()">To Celsius</button>
+    <button type="button" onclick="toFahrenheit()">To Fahrenheit</button>
+</form>
+<br>
+<span id="result"></span>
+
+<script>
+    function toCelsius() {
+        const num1 = parseFloat(document.getElementById('num1').value);
+        document.getElementById('result').textContent = num1 + "°F is " + ((num1 - 32) * 5/9) + "°C";
+    }
+
+    function toFahrenheit() {
+        const num1 = parseFloat(document.getElementById('num1').value);
+        document.getElementById('result').textContent = num1 + "°C is " + ((num1 * 9/5) + 32) + "°F";
+    }
+</script>
+</body>
+</html>

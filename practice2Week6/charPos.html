@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Remove Character at Specified Position</title>
+</head>
+<body>
+<h2>Remove a character from the string</h2>
+<form>
+  <label for="stringInput">Enter a string:</label>
+  <input type="text" id="stringInput" name="stringInput">
+  <br><br>
+  <label for="positionInput">Enter the position (starting from 0):</label>
+  <input type="number" id="positionInput" name="positionInput">
+  <br><br>
+  <button type="button" onclick="removeCharacterFromInput()">Remove Character</button>
+</form>
+<br>
+<span id="result"></span>
+
+<script>
+  function removeCharacter(str, position) {
+    if (position < 0 || position >= str.length) {
+      return "Invalid position!";
+    }
+
+    const modifiedString = str.slice(0, position) + str.slice(position + 1);
+    return modifiedString;
+  }
+
+  function removeCharacterFromInput() {
+    const str = document.getElementById('stringInput').value;
+    const position = parseInt(document.getElementById('positionInput').value);
+
+    const result = removeCharacter(str, position);
+    document.getElementById('result').textContent = `Modified string: ${result}`;
+  }
+</script>
+</body>
+</html>
